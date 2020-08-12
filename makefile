@@ -9,7 +9,7 @@ CFLAGS=-I.
 UNAME=$(shell uname)
 
 SOURCES +=
-SOURCES += src/rectangle.cpp src/point.cpp src/vector2.cpp src/game.cpp src/spritebatch.cpp src/color.cpp src/mtexture.cpp
+SOURCES += pcn/rectangle.cpp src/point.cpp src/vector2.cpp src/game.cpp src/spritebatch.cpp src/color.cpp src/mtexture.cpp
 
 EXE = engine
 
@@ -19,7 +19,7 @@ OBJS = $(addprefix build/,$(addsuffix .o, $(basename $(notdir $(SOURCES)))))
 
 all: build/Content $(EXE) compileDatabase
 
-build/%.o:src/%.cpp
+build/%.o:pcn/%.cpp
 	@echo Compiling $@
 	@$(CXX) $(INCLUDES) -fpic -c -o $@ $<
 

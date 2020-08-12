@@ -2,6 +2,7 @@
 
 Vector2::Vector2(float x, float y){
     _x=x; _y=y;
+
 }
 Vector2::Vector2(float xy){
     _x=xy; _y=xy;
