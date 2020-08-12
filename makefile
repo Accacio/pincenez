@@ -8,10 +8,10 @@ CXX=g++
 CFLAGS=-I.
 UNAME=$(shell uname)
 
-SOURCES += src/sandbox.cpp
+SOURCES +=
 SOURCES += src/rectangle.cpp src/point.cpp src/vector2.cpp src/game.cpp src/spritebatch.cpp src/color.cpp src/mtexture.cpp
 
-EXE = build/example
+EXE = engine
 
 INCLUDES = -Ilib/
 LIBS =`sdl2-config --libs` -lSDL2_image -lSDL2_ttf -lSDL2_mixer
@@ -21,7 +21,7 @@ all: build/Content $(EXE) compileDatabase
 
 build/%.o:src/%.cpp
 	@echo Compiling $@
-	@$(CXX) $(INCLUDES) -c -o $@ $<
+	@$(CXX) $(INCLUDES) -fpic -c -o $@ $<
 
 build/Content:
 	@echo Linking Content folder
@@ -29,13 +29,22 @@ build/Content:
 
 $(EXE): $(OBJS)
 	@echo Linking
-	@$(CXX) -fpic -o $@ $^ $(LIBS) $(INCLUDES)
+	@$(CXX) -shared -o build/lib$@.so $^ $(LIBS) $(INCLUDES)
 
 compile_commands.json:
 	@ (echo "[";\
 	make --always-make --dry-run | grep -v make | grep -wE 'clang|gcc|g++' | grep -w '\-c' \
 	| sed "s,\(.* \)\([.0-9a-Z/]*\)$$,{\n\"directory\":\"${PWD}\"\,\n\"command\": \"\1\2\"\,\n\"file\": \"\2\"\n}\,,";\
 	echo "]" )> compile_commands.json
+
+example:
+	@$(CXX) src/sandbox.cpp -o build/$@ $(LIBS) $(INCLUDES) -l$(EXE) -Lbuild/
+
+.PHONY: install
+install:
+	@cp build/lib$(EXE).so /usr/lib
+uninstall:
+	@rm /usr/lib/lib$(EXE).so
 
 .PHONY: compileDatabase
 compileDatabase: compile_commands.json
