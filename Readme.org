@@ -1,2 +1,16 @@
 #+TITLE: Readme
 Monocle in C
+#+BEGIN_SRC bash
+sudo apt-get install libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev libsdl2-mixer-dev
+#+END_SRC
+
+to build:
+#+BEGIN_SRC bash
+mkdir build
+make
+#+END_SRC
+
+to run:
+#+BEGIN_SRC bash
+build/example
+#+END_SRC
