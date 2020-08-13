@@ -1,5 +1,5 @@
 #+TITLE: Readme
-Monocle in C
+Monocle in C++
 #+BEGIN_SRC bash
 sudo apt-get install libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev libsdl2-mixer-dev
 #+END_SRC
@@ -10,7 +10,14 @@ mkdir build
 make
 #+END_SRC
 
-to run:
+to install:
 #+BEGIN_SRC bash
-build/example
+sudo make install
 #+END_SRC
+
+to uninstall:
+#+BEGIN_SRC bash
+sudo make uninstall
+#+END_SRC
+
+A minimal example is provided in [[https://github.com/Accacio/morpheus][morpheus]]
