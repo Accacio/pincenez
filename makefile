@@ -14,7 +14,7 @@ SOURCES += src/rectangle.cpp src/point.cpp src/vector2.cpp src/game.cpp src/spri
 EXE = libengine.so
 
 INCLUDES = -Ilib/
-LIBS =`sdl2-config --libs` -lSDL2_image -lSDL2_ttf -lSDL2_mixer
+LIBS =-lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer
 OBJS = $(addprefix build/,$(addsuffix .o, $(basename $(notdir $(SOURCES)))))
 
 all: $(EXE) compileDatabase
