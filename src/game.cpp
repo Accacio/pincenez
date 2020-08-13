@@ -35,11 +35,6 @@ Game::~Game()
 
 void Game::draw() {
     // Clear screen
-    spritebatch.begin();
-
-    texture.draw(spritebatch, Vector2(2,2));
-
-    spritebatch.end();
 
 }
 void Game::update() {

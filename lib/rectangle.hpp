@@ -4,8 +4,8 @@
 #include <iostream>
 #include <cmath>
 
-#include "vector2.hpp"
-#include "point.hpp"
+#include "math/vec2.hpp"
+#include "math/point.hpp"
 
 class Rectangle {
     public:
@@ -18,7 +18,7 @@ class Rectangle {
         }
 
         bool contains(Rectangle rec);
-        bool contains(Vector2 vec);
+        bool contains(Vec2 vec);
         bool contains(Point poin);
         bool contains(int x, int y);
         bool contains(float x, float y);

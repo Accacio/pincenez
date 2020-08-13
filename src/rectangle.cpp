@@ -22,7 +22,7 @@ bool Rectangle::contains(Rectangle rec){
 };
 
 // TODO verificar
-bool Rectangle::contains(Vector2 vec){
+bool Rectangle::contains(Vec2 vec){
   return vec._x>=left() && vec._x<right() && vec._y >= top() && vec._y<=bottom();
 };
 

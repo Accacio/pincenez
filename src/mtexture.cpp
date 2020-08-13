@@ -23,7 +23,7 @@ MTexture::MTexture(SDL_Texture * texture, std::string filename,SDL_Renderer * re
     int w,h;
     SDL_QueryTexture(texture, NULL, NULL, &w, &h);
     ClipRect = Rectangle(0, 0, w, h);
-    DrawOffset = Vector2::Zero();
+    DrawOffset = Vec2::Zero();
     _width = ClipRect._width;
     _height = ClipRect._height;
 // TODO filewatcher
@@ -43,13 +43,13 @@ void MTexture::setUtil()
 {
     int w,h;
     SDL_QueryTexture(_texture, NULL, NULL, &w, &h);
-    _center = Vector2(_width, _height) * 0.5f;
+    _center = Vec2(_width, _height) * 0.5f;
     _leftUV = ClipRect.left() / (float)w;
     _rightUV = ClipRect.right() / (float)w;
     _topUV = ClipRect.top() / (float)h;
     _bottomUV = ClipRect.bottom() / (float)h;
 }
 
-void MTexture::draw(SpriteBatch spriteBatch,Vector2 position){
-  spriteBatch.draw(_texture, position, ClipRect, Color::White(), 0, -DrawOffset,Vector2::Unit());
+void MTexture::draw(SpriteBatch spriteBatch,Vec2 position){
+  spriteBatch.draw(_texture, position, ClipRect, Color::White(), 0, -DrawOffset,Vec2::Unit());
 }

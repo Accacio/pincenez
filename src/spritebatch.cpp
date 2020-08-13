@@ -12,7 +12,7 @@ void SpriteBatch::end(){
     SDL_RenderPresent( _renderer );
 }
 /** srcRect Empty equal all the texture */
-void SpriteBatch::draw(SDL_Texture* texture,Vector2 position,Rectangle srcRect,Color color, float rotationDeg, Vector2 rotOrigin,Vector2 scale,SpriteEffects effect){
+void SpriteBatch::draw(SDL_Texture* texture,Vec2 position,Rectangle srcRect,Color color, float rotationDeg, Vec2 rotOrigin,Vec2 scale,SpriteEffects effect){
 
     if (srcRect==Rectangle::Empty()){
         SDL_QueryTexture(texture, NULL, NULL, &srcRect._width, &srcRect._height);

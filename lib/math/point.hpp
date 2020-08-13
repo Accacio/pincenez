@@ -4,7 +4,7 @@
 #include <iostream>
 #include <cmath>
 
-#include "vector2.hpp"
+#include "vec2.hpp"
 
 class Point {
     public:

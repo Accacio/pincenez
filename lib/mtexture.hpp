@@ -6,7 +6,7 @@
 #include <SDL2/SDL_image.h>
 
 #include "rectangle.hpp"
-#include "vector2.hpp"
+#include "math/vec2.hpp"
 #include "spritebatch.hpp"
 
 
@@ -23,16 +23,16 @@ class MTexture {
         SDL_Renderer * _renderer = NULL;
 
         Rectangle ClipRect = Rectangle::Empty();
-        Vector2 DrawOffset = Vector2::Zero();
+        Vec2 DrawOffset = Vec2::Zero();
         int _width;
         int _height;
-        Vector2 _center = Vector2::Zero();
+        Vec2 _center = Vec2::Zero();
         int _leftUV;
         int _rightUV;
         int _topUV;
         int _bottomUV;
         // void draw(SpriteBatch spriteBatch);
-        void draw(SpriteBatch spriteBatch,Vector2 position);
+        void draw(SpriteBatch spriteBatch,Vec2 position);
 
     private:
         void setUtil();

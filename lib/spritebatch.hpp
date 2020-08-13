@@ -4,7 +4,7 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 
-#include "vector2.hpp"
+#include "math/vec2.hpp"
 #include "rectangle.hpp"
 #include "color.hpp"
 
@@ -26,10 +26,10 @@ class SpriteBatch {
 
         // void drawString();
         void draw(SDL_Texture* texture,
-                  Vector2 position,
+                  Vec2 position,
                   Rectangle srcRect,
                   Color color,
-                  float rotationDeg, Vector2 rotOrigin,Vector2 scale,SpriteEffects effect=SpriteEffects::None);
+                  float rotationDeg, Vec2 rotOrigin,Vec2 scale,SpriteEffects effect=SpriteEffects::None);
 // Begin (SpriteSortMode sortMode = SpriteSortMode.Deferred, BlendState blendState = null, SamplerState samplerState = null, DepthStencilState depthStencilState = null, RasterizerState rasterizerState = null, Effect effect = null, Matrix? transformMatrix = default(Matrix?));
         // DrawString(Draw.DefaultFont, drawCommands[i].Text, new Vector2(20, screenHeight - 92 - (30 * i)), drawCommands[i].Color);
         SDL_BlendMode _blendMode = SDL_BLENDMODE_NONE;
