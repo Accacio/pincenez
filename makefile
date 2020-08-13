@@ -37,6 +37,7 @@ compile_commands.json:
 install: /usr/lib/$(EXE)
 
 /usr/lib/$(EXE): $(EXE)
+	@echo Installing library in system folder
 	@cp $(EXE) /usr/lib/
 
 uninstall:
