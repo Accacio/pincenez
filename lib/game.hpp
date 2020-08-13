@@ -18,10 +18,10 @@ class Game {
         Game();
         virtual ~Game();
 
-        void update();
-        void draw();
-        void run();
-        void loadContent();
+        virtual void update();
+        virtual void draw();
+        virtual void run();
+        virtual void loadContent();
         void unloadContent(){};
         void initialize(){};
 
