@@ -1,10 +1,5 @@
-#ifndef __ENTRY_H_
-#define __ENTRY_H_
+#include "entry.hpp"
 
-
-#include "game.hpp"
-
-extern Game * newGame();
 
 int main(int argc, char *argv[]) {
 
@@ -17,5 +12,3 @@ int main(int argc, char *argv[]) {
     delete myGame;
     return 0;
 }
-
-#endif // __ENTRY_H_
