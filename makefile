@@ -21,11 +21,11 @@ all: $(EXE) compileDatabase
 
 build/%.o:src/%.cpp
 	@echo Compiling $@
-	@$(CXX) $(CFLAGS) -fPIC $(INCLUDES) -c $< -o $@  $(LIBS)
+	@$(CXX) $(CFLAGS) -fPIC $(INCLUDES) -c -o $@  $(LIBS) $<
 
 $(EXE): $(OBJS)
 	@echo Linking
-	@$(CXX) -shared -o $@ $^ $(INCLUDES) $(LIBS)
+	@$(CXX) -shared $^ -o $@ $(INCLUDES) $(LIBS)
 
 compile_commands.json:
 	@ (echo "[";\
