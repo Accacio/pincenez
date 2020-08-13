@@ -5,7 +5,7 @@
 # @version 0.1
 
 CXX=g++
-CFLAGS=-I.
+CFLAGS=-I. -Wall
 UNAME=$(shell uname)
 
 SOURCES +=
@@ -21,11 +21,11 @@ all: $(EXE) compileDatabase
 
 build/%.o:pcn/%.cpp
 	@echo Compiling $@
-	@$(CXX) $(INCLUDES) -fpic -c -o $@ $<
+	@$(CXX) $(CFLAGS) -fPIC $(INCLUDES) -c $< -o $@  $(LIBS)
 
 $(EXE): $(OBJS)
 	@echo Linking
-	@$(CXX) -shared -o $@ $^ $(LIBS) $(INCLUDES)
+	@$(CXX) -shared -o $@ $^ $(INCLUDES) $(LIBS)
 
 compile_commands.json:
 	@ (echo "[";\
