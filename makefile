@@ -19,10 +19,12 @@ OBJS = $(addprefix build/,$(addsuffix .o, $(basename $(notdir $(SOURCES)))))
 
 all: $(EXE) compileDatabase
 
+# Create objects with position independet code
 build/%.o:src/%.cpp
 	@echo Compiling $@
 	@$(CXX) $(CFLAGS) -fPIC $(INCLUDES) -c -o $@  $(LIBS) $<
 
+# Create Shared library
 $(EXE): $(OBJS)
 	@echo Linking
 	@$(CXX) -shared $^ -o $@ $(INCLUDES) $(LIBS)
