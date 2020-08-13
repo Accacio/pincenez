@@ -62,7 +62,7 @@ void Game::loadContent(){
     SDL_RenderClear(renderer);
 
     //Load image at specified path
-    texture = MTexture::fromFile(renderer, "Content/graphics/preview.png");
+    texture = MTexture::fromFile(renderer, "Content/graphics/preview.jpg");
 
 }
 void Game::run(){
