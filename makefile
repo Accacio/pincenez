@@ -9,7 +9,7 @@ CFLAGS=-I.
 UNAME=$(shell uname)
 
 SOURCES +=
-SOURCES += pcn/rectangle.cpp src/point.cpp src/vector2.cpp src/game.cpp src/spritebatch.cpp src/color.cpp src/mtexture.cpp
+SOURCES += pcn/rectangle.cpp pcn/point.cpp pcn/vector2.cpp pcn/game.cpp pcn/spritebatch.cpp pcn/color.cpp pcn/mtexture.cpp pcn/entry.cpp
 
 EXE = libengine.so
 
