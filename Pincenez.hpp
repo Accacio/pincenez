@@ -19,10 +19,10 @@
 #include "lib/game.hpp"
 #include "lib/color.hpp"
 #include "lib/mtexture.hpp"
-#include "lib/point.hpp"
+#include "lib/math/point.hpp"
 #include "lib/rectangle.hpp"
 #include "lib/spritebatch.hpp"
-#include "lib/vector2.hpp"
+#include "lib/math/vec2.hpp"
 
 extern Game * newGame();
 
