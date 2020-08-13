@@ -1,4 +1,5 @@
 #include "game.hpp"
+
 Game::Game(){
     // Go to execution path
 
@@ -24,6 +25,13 @@ Game::Game(){
         std::exit(-1);
     }
 
+};
+
+Game::~Game()
+{
+    SDL_DestroyRenderer(renderer);
+    SDL_DestroyWindow( window );
+    SDL_Quit();
 };
 
 void Game::draw() {

@@ -26,12 +26,7 @@ class Game {
     public:
 
         Game();
-        virtual ~Game(){
-            SDL_DestroyRenderer(renderer);
-            SDL_DestroyWindow( window );
-            SDL_Quit();
-        };
-
+        virtual ~Game();
 
         void update();
         void draw();
