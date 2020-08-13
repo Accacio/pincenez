@@ -9,7 +9,7 @@ CFLAGS=-I. -Wall
 UNAME=$(shell uname)
 
 SOURCES +=
-SOURCES += pcn/rectangle.cpp pcn/point.cpp pcn/vector2.cpp pcn/game.cpp pcn/spritebatch.cpp pcn/color.cpp pcn/mtexture.cpp
+SOURCES += src/rectangle.cpp src/point.cpp src/vector2.cpp src/game.cpp src/spritebatch.cpp src/color.cpp src/mtexture.cpp
 
 EXE = libengine.so
 
@@ -19,7 +19,7 @@ OBJS = $(addprefix build/,$(addsuffix .o, $(basename $(notdir $(SOURCES)))))
 
 all: $(EXE) compileDatabase
 
-build/%.o:pcn/%.cpp
+build/%.o:src/%.cpp
 	@echo Compiling $@
 	@$(CXX) $(CFLAGS) -fPIC $(INCLUDES) -c $< -o $@  $(LIBS)
 

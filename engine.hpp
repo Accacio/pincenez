@@ -1,5 +1,5 @@
-#ifndef __ENTRY_H_
-#define __ENTRY_H_
+#ifndef __ENGINE_H_
+#define __ENGINE_H_
 
 #ifdef _WIN32
 #include <direct.h>
@@ -13,6 +13,16 @@
 #endif
 
 #include <iostream>
+
+
+// r!ls -pd lib/*
+#include "lib/game.hpp"
+#include "lib/color.hpp"
+#include "lib/mtexture.hpp"
+#include "lib/point.hpp"
+#include "lib/rectangle.hpp"
+#include "lib/spritebatch.hpp"
+#include "lib/vector2.hpp"
 
 extern Game * newGame();
 
@@ -28,4 +38,4 @@ int main(int argc, char *argv[]) {
     return 0;
 }
 
-#endif // __ENTRY_H_
+#endif // __ENGINE_H_
