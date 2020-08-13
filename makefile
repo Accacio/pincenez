@@ -8,10 +8,10 @@ CXX=g++
 CFLAGS=-I. -Wall
 UNAME=$(shell uname)
 
-SOURCES +=
-SOURCES += src/rectangle.cpp src/point.cpp src/vector2.cpp src/game.cpp src/spritebatch.cpp src/color.cpp src/mtexture.cpp
+SOURCES += src/point.cpp src/vec2.cpp
+SOURCES += src/rectangle.cpp src/game.cpp src/spritebatch.cpp src/color.cpp src/mtexture.cpp
 
-EXE = libengine.so
+EXE = libpincenez.so
 
 INCLUDES = -Ilib/
 LIBS =-lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer
