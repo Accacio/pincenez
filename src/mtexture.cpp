@@ -3,6 +3,7 @@
 MTexture MTexture::fromFile(SDL_Renderer * renderer, std::string const & filename){
    
     SDL_Surface* loadedSurface = IMG_Load( filename.data() );
+    PCNLOG_DEBUG(filename.data(), " loaded ");
     SDL_Texture * newTexture = SDL_CreateTextureFromSurface(renderer, loadedSurface);
     SDL_FreeSurface( loadedSurface );
     return MTexture(newTexture, filename,renderer);

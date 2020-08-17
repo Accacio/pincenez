@@ -24,10 +24,17 @@
 #include "lib/spritebatch.hpp"
 #include "lib/math/vec2.hpp"
 
+
+#include "lib/Log.hpp"
+
 extern Game * newGame();
 
 int main(int argc, char *argv[]) {
-
+    Log::Init();
+    // Log::client_logger.print<severity_type::error>("hello");
+    // Log::core_logger.print< severity_type::info >("teste");
+	// PCNLOG("Starting the application..");
+	// LOG("Starting the application..");
     std::string path = argv[0];
     path = path.substr(0,path.find_last_of("/\\"));
     cd(path.data());

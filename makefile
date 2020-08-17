@@ -9,12 +9,12 @@ CFLAGS=-I. -Wall
 UNAME=$(shell uname)
 
 SOURCES += src/point.cpp src/vec2.cpp
-SOURCES += src/rectangle.cpp src/game.cpp src/spritebatch.cpp src/color.cpp src/mtexture.cpp
+SOURCES += src/rectangle.cpp src/game.cpp src/spritebatch.cpp src/color.cpp src/mtexture.cpp src/Log.cpp
 
 EXE = libpincenez.so
 
 INCLUDES = -Ilib/
-LIBS =-lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer
+LIBS =-lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer -lGL
 OBJS = $(addprefix build/,$(addsuffix .o, $(basename $(notdir $(SOURCES)))))
 
 all: $(EXE) compileDatabase
@@ -22,12 +22,12 @@ all: $(EXE) compileDatabase
 # Create objects with position independet code
 build/%.o:src/%.cpp
 	@echo Compiling $@
-	@$(CXX) $(CFLAGS) -fPIC $(INCLUDES) -c -o $@  $(LIBS) $<
+	@$(CXX) -g $(CFLAGS) -fPIC $(INCLUDES) -c -o $@  $(LIBS) $<
 
 # Create Shared library
 $(EXE): $(OBJS)
 	@echo Linking
-	@$(CXX) -shared $^ -o $@ $(INCLUDES) $(LIBS)
+	@$(CXX) -g -shared $^ -o $@ $(INCLUDES) $(LIBS)
 
 compile_commands.json:
 	@ (echo "[";\

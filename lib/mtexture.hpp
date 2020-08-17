@@ -5,6 +5,7 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 
+#include "Log.hpp"
 #include "rectangle.hpp"
 #include "math/vec2.hpp"
 #include "spritebatch.hpp"
